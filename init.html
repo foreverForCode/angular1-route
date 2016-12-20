@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jorden">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../lib/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="ctx1">
+		{{test}}
+	</div>
+</body>
+<script type="text/javascript">
+	var app = angular.module('jorden',[]);
+	app.controller('ctx1',['$scope',function($scope){
+		$scope.test="hello angular1.3.0"
+	}])
+</script>
+</html>

@@ -15,19 +15,28 @@
 	app.controller('ctx1',['$scope','$http',function($scope,$http){
 		$http({
 			method:'GET',
-			url:url
-			}).then(function(data){console.log(data)
+			url:"json/userInfo.json"
+			}).then(function(data){console.log(data.data);$scope.students = data.data
 				
 			},function(error){console.log(error)});
-		$scope.students = students;
+		
 	}]);
-	app.controller('ctx2',['$scope','$routeParams',function($scope,$routeParams){
-		for(var i = 0;i<students.length;i++){
-			if(students[i].stuId == $routeParams.id){
-				$scope.student=students[i];
-				break;
-			}
-		}
+	app.controller('ctx2',['$scope','$routeParams','$http',function($scope,$routeParams,$http){
+		$http({
+			method:'GET',
+			url:"json/userInfo.json"
+			}).then(function(data){
+					console.log(data.data);
+					var students = data.data;
+					for(var i = 0;i<students.length;i++){
+						if(students[i].stuId == $routeParams.id){
+							$scope.student=students[i];
+							break;
+						}
+					}
+				
+				},function(error){console.log(error)});
+		
 	}]);
 	app.config(['$routeProvider',function($routeProvider){
 		$routeProvider
@@ -42,12 +51,6 @@
 			})
 			 .otherwise({redirectTo:'/'})
 	}]);
-	var students = [
-		{stuId:1000,name:"张1",sex:"man",score:60},
-		{stuId:1001,name:"张2",sex:"man",score:60},
-		{stuId:1002,name:"张3",sex:"man",score:60},
-		{stuId:1003,name:"张4",sex:"man",score:60},
-	]
 </script>
 </html>
 <!-- 

@@ -1,0 +1,74 @@
+
+<!-- 
+	这个demo的作用是实现tab的两级联动切换，在不需要路由的情况下，实现原理
+	1. 通过ng if控制div的出现或者删除，由于无论什么时候只有一个view是出现，所以从根本上实现了position
+	2. 通过把数据放在对象中，从而规避了嵌套问题
+ -->
+<!DOCTYPE html>
+<html lang="en" ng-app="jorden">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../lib/angular.min.js"></script>
+	<style type="text/css">
+		.views{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #ccc;
+		}
+		.views1{
+			background: red;
+		}
+		.views2{
+			background: purple
+		}
+		.views3{
+			background: grey
+		}
+	</style>
+</head>
+<body>
+	<div ng-controller="ctx1">
+
+	<ul>
+		<li ng-click="actions.setCurrent(1)">zhangsan</li>
+		<li ng-click="actions.setCurrent(2)">lisi</li>
+		<li ng-click="actions.setCurrent(3)">wangwu</li>
+	</ul>
+	<div ng-if="data.current == 1" class="views views1">
+		detail zhangsan
+		<ul>
+			<li ng-click="actions.setChildCurrent(1)">name</li>
+			<li ng-click="actions.setChildCurrent(2)">location</li>
+			<li ng-click="actions.setChildCurrent(3)">detail</li>
+		</ul>
+		<div ng-if="data.childCurrent == 1">name is zhangsan</div>
+		<div ng-if="data.childCurrent == 2">location is guangzhou</div>
+		<div ng-if="data.childCurrent == 3">detail is sex is man</div>
+	</div>
+	<div ng-if="data.current == 2" class="views views2">detail lisi</div>
+	<div ng-if="data.current == 3" class="views views3">detail wangwu</div>
+</div>
+
+
+</body>
+<script type="text/javascript">
+	var app = angular.module('jorden',[]);
+	app.controller('ctx1',['$scope',function($scope){
+		$scope.data={
+			current:"1",
+			childCurrent :"1",
+		};
+		$scope.actions={
+			setCurrent:function(param){
+				$scope.data.current=param;
+			},
+			setChildCurrent:function(params){
+				$scope.data.childCurrent = params
+			}
+		}
+
+		
+	}])
+</script>
+</html>

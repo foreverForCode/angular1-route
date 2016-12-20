@@ -1,0 +1,14 @@
+[
+	{
+		"stuId":1000,"name":"zhangmingming","sex":"woman","score":60
+	},
+	{
+		"stuId":1001,"name":"limingming","sex":"man","score":80
+	},
+	{
+		"stuId":1002,"name":"wanmingming","sex":"man","score":60
+	},
+	{
+		"stuId":1003,"name":"zhoumingming","sex":"woman","score":60
+	}
+]

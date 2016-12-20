@@ -1,0 +1,239 @@
+{
+    "code": "100",
+    "msg": "处理成功",
+    "treeNodes": [
+        {
+            "id": 208,
+            "parentId": 0,
+            "name": "店铺",
+            "resTypeName": "导航",
+            "link": "/api/nav/index/208",
+            "resourceCode": "208",
+            "children": [
+                {
+                    "id": 215,
+                    "parentId": 208,
+                    "name": "审核管理",
+                    "resTypeName": "菜单",
+                    "link": "shop/check",
+                    "resourceCode": "215",
+                    "children": [
+                        {
+                            "id": 274,
+                            "parentId": 215,
+                            "name": "店铺审核管理详情审核记录",
+                            "resTypeName": "接口",
+                            "link": "/api/shop/queryAuditRecordsByShopCode.json",
+                            "resourceCode": "274",
+                            "children": null
+                        },
+                        {
+                            "id": 275,
+                            "parentId": 215,
+                            "name": "店铺审核管理分销商列表查询",
+                            "resTypeName": "接口",
+                            "link": "/api/shop/queryShopProvider.json",
+                            "resourceCode": "275",
+                            "children": null
+                        },
+                        {
+                            "id": 276,
+                            "parentId": 215,
+                            "name": "店铺审核管理供应商列表查询",
+                            "resTypeName": "接口",
+                            "link": "/api/shop/getSupplierStatistics.json",
+                            "resourceCode": "276",
+                            "children": null
+                        },
+                        {
+                            "id": 277,
+                            "parentId": 215,
+                            "name": "店铺审核管理更新或保存审核信息",
+                            "resTypeName": "接口",
+                            "link": "/api/shop/updateAndSaveAuditRecord.json",
+                            "resourceCode": "277",
+                            "children": null
+                        },
+                        {
+                            "id": 270,
+                            "parentId": 215,
+                            "name": "店铺审核管理详情账户信息",
+                            "resTypeName": "接口",
+                            "link": "/api/shop/queryShopAccountInfo.json",
+                            "resourceCode": "270",
+                            "children": null
+                        },
+                        {
+                            "id": 271,
+                            "parentId": 215,
+                            "name": "店铺审核管理详情提款信息",
+                            "resTypeName": "接口",
+                            "link": "/api/account/queryUserGetCashList.json",
+                            "resourceCode": "271",
+                            "children": null
+                        }
+                    ]
+                },
+                {
+                    "id": 216,
+                    "parentId": 208,
+                    "name": "店铺管理",
+                    "resTypeName": "菜单",
+                    "link": "shop/manage",
+                    "resourceCode": "216",
+                    "children": null
+                },
+                {
+                    "id": 217,
+                    "parentId": 208,
+                    "name": "功能配置",
+                    "resTypeName": "菜单",
+                    "link": "shop/func",
+                    "resourceCode": "217",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": 209,
+            "parentId": 0,
+            "name": "订单",
+            "resTypeName": "导航",
+            "link": "/api/nav/index/209",
+            "resourceCode": "209",
+            "children": [
+                {
+                    "id": 221,
+                    "parentId": 209,
+                    "name": "订单列表",
+                    "resTypeName": "菜单",
+                    "link": "order/list",
+                    "resourceCode": "221",
+                    "children": null
+                },
+                {
+                    "id": 222,
+                    "parentId": 209,
+                    "name": "订单统计",
+                    "resTypeName": "菜单",
+                    "link": "order/static",
+                    "resourceCode": "222",
+                    "children": null
+                },
+                {
+                    "id": 223,
+                    "parentId": 209,
+                    "name": "仲裁退款",
+                    "resTypeName": "菜单",
+                    "link": "order/organ",
+                    "resourceCode": "223",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": 210,
+            "parentId": 0,
+            "name": "财务",
+            "resTypeName": "导航",
+            "link": "/api/nav/index/210",
+            "resourceCode": "210",
+            "children": [
+                {
+                    "id": 218,
+                    "parentId": 210,
+                    "name": "对账管理",
+                    "resTypeName": "菜单",
+                    "link": "account/reconciliation",
+                    "resourceCode": "218",
+                    "children": null
+                },
+                {
+                    "id": 219,
+                    "parentId": 210,
+                    "name": "提现管理",
+                    "resTypeName": "菜单",
+                    "link": "account/refund",
+                    "resourceCode": "219",
+                    "children": null
+                },
+                {
+                    "id": 220,
+                    "parentId": 210,
+                    "name": "退款管理",
+                    "resTypeName": "菜单",
+                    "link": "account/withdrawals",
+                    "resourceCode": "220",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": 211,
+            "parentId": 0,
+            "name": "账号",
+            "resTypeName": "导航",
+            "link": "/api/nav/index/211",
+            "resourceCode": "211",
+            "children": [
+                {
+                    "id": 212,
+                    "parentId": 211,
+                    "name": "平台用户",
+                    "resTypeName": "菜单",
+                    "link": "user/platformUser",
+                    "resourceCode": "212",
+                    "children": null
+                },
+                {
+                    "id": 213,
+                    "parentId": 211,
+                    "name": "内部授权",
+                    "resTypeName": "菜单",
+                    "link": "user/insideAuthorize",
+                    "resourceCode": "213",
+                    "children": null
+                },
+                {
+                    "id": 214,
+                    "parentId": 211,
+                    "name": "内部角色",
+                    "resTypeName": "菜单",
+                    "link": "user/insideStarf",
+                    "resourceCode": "214",
+                    "children": null
+                }
+            ]
+        },
+        {
+            "id": 311,
+            "parentId": 0,
+            "name": "部落",
+            "resTypeName": "导航",
+            "link": "/api/nav/index/211",
+            "resourceCode": "311",
+            "children": [
+                {
+                    "id": 312,
+                    "parentId": 311,
+                    "name": "部落用户",
+                    "resTypeName": "菜单",
+                    "link": "tribe/tribeIndex",
+                    "resourceCode": "312",
+                    "children": null
+                }
+               
+            ]
+        }
+    ],
+    "userRef": {
+        "userId": "2",
+        "nickname": "运管后台超级管理员",
+        "profilePhoto": "http://tx.haiqq.com/uploads/allimg/150325/12231a148-1.jpg"
+    },
+    "shopRef": {
+        "shopCode": "2",
+        "shopName": "运管后台",
+        "shopLogo": null
+    }
+}

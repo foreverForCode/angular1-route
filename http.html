@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jorden">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="ctx1">
+		{{test}}
+	</div>
+</body>
+<script type="text/javascript">
+	var app = angular.module('jorden',[]);
+	app.controller('ctx1',['$scope','$http',function($scope,$http){
+		$scope.test="hello angular 1.3.0";
+		
+
+		$scope.startHttp=function(url){
+			$http({
+			method:'GET',
+			url:url
+			}).then(function(data){console.log(data)
+				
+			},function(error){console.log(error)})
+		};
+		$scope.startHttp('json/mock-http.json');
+
+	}])
+</script>
+</html>
