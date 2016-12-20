@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jorden">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<div ng-view></div>
+</body>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script type="text/javascript">
+	var app = angular.module('jorden',['ngRoute']);
+	app.controller('ctx1',['$scope',function($scope){
+		$scope.students = students;
+	}]);
+	app.controller('ctx2',['$scope','$routeParams',function($scope,$routeParams){
+		for(var i = 0;i<students.length;i++){
+			if(students[i].stuId == $routeParams.id){
+				$scope.student=students[i];
+				break;
+			}
+		}
+	}]);
+	app.config(['$routeProvider',function($routeProvider){
+		$routeProvider
+			.when('/',{
+				controller:'ctx1',
+				templateUrl:"ctx_1.html"
+			})
+			.when('/view/:id',{
+				controller:'ctx2',
+				templateUrl:"ctx_2.html",
+				publicAccess:true
+			})
+			 .otherwise({redirectTo:'/'})
+	}]);
+	var students = [
+		{stuId:1000,name:"张1",sex:"man",score:60},
+		{stuId:1001,name:"张2",sex:"man",score:60},
+		{stuId:1002,name:"张3",sex:"man",score:60},
+		{stuId:1003,name:"张4",sex:"man",score:60},
+	]
+</script>
+</html>
+<!-- 
+总结：
+	1.出现问题最多的地方不是编程，而是你自己引入的angular版本必须要注意
+	2.其实面向百度编程，有很重大的作用，可以在网上找一下别人已经实现的原理，把别人踩过的
+	  的坑跳过去
+	3.实现原理
+		1.<a href="#/"></a>里面的#非常重要，有#号，那么#后面的内容不会被浏览器读取，这才能实现本地路由跳转，而不是向服务器发送请求
+		2.when('/view/:id')里面的第一个/也非常重要，用来识别后面的参数，不加的话，浏览器不会渲染view
+		3.传参的原理
+		   1.引入$routeParams,它能识别和读取浏览器地址栏中传递过来的参数，
+		   2.通过for遍历数据，然后把遍历的每一个对象中的一个特定id的属性值和传过来的参数做对比
+		   3. 如果两者一样则说明这个对象是我需要的对象
+ -->
